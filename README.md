@@ -6,3 +6,5 @@
 
 ## Test Results
 ![Test Results](./testresults.jpg)
+
+>___To run test results clone respository and then execute npm run tests___
