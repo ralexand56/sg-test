@@ -28,8 +28,6 @@ const findFlush = (cards: Card[]): boolean => {
 
 const findStraight = (cards: Card[]): boolean => {
   const orderedCards = cards.sort((a, b) => a.rank - b.rank).map(x => x.rank);
-  console.log(orderedCards);
-  console.log(isIntervalOfOneFunction(orderedCards));
   if (!isIntervalOfOneFunction(orderedCards)) {
     return false;
   }
@@ -93,83 +91,3 @@ const findPair = (cards: Card[]): boolean => {
 
   return false;
 };
-
-console.log(
-  calculateHand([
-    { suit: "clubs", rank: 1 },
-    { suit: "clubs", rank: 3 },
-    { suit: "spades", rank: 5 },
-    { suit: "clubs", rank: 4 },
-    { suit: "hearts", rank: 11 }
-  ])
-);
-
-console.log(
-  calculateHand([
-    { suit: "clubs", rank: 3 },
-    { suit: "clubs", rank: 3 },
-    { suit: "spades", rank: 5 },
-    { suit: "clubs", rank: 4 },
-    { suit: "hearts", rank: 3 }
-  ])
-);
-
-console.log(
-  calculateHand([
-    { suit: "clubs", rank: 3 },
-    { suit: "clubs", rank: 3 },
-    { suit: "spades", rank: 5 },
-    { suit: "clubs", rank: 3},
-    { suit: "hearts", rank: 3 }
-  ])
-);
-
-console.log(
-  calculateHand([
-    { suit: "clubs", rank: 3 },
-    { suit: "clubs", rank: 3 },
-    { suit: "spades", rank: 5 },
-    { suit: "clubs", rank: 5},
-    { suit: "hearts", rank: 3 }
-  ])
-);
-
-console.log(
-  calculateHand([
-    { suit: "clubs", rank: 1 },
-    { suit: "clubs", rank: 2 },
-    { suit: "spades", rank: 3 },
-    { suit: "clubs", rank: 4 },
-    { suit: "hearts", rank: 5 }
-  ])
-);
-
-console.log(
-  calculateHand([
-    { suit: "clubs", rank: 1 },
-    { suit: "clubs", rank: 2 },
-    { suit: "spades", rank: 3 },
-    { suit: "clubs", rank: 4 },
-    { suit: "hearts", rank: 5 }
-  ])
-);
-
-console.log(
-  calculateHand([
-    { suit: "clubs", rank: 4 },
-    { suit: "clubs", rank: 2 },
-    { suit: "spades", rank: 3 },
-    { suit: "clubs", rank: 4 },
-    { suit: "hearts", rank: 6 }
-  ])
-);
-
-console.log(
-  calculateHand([
-    { suit: "clubs", rank: 2 },
-    { suit: "clubs", rank: 3 },
-    { suit: "spades", rank: 4 },
-    { suit: "clubs", rank: 5 },
-    { suit: "hearts", rank: 6 }
-  ])
-);

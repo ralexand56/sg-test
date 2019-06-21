@@ -1,7 +1,8 @@
 # Sweet Green Exercise
 
-**I included a [typescript version](http://) and a [javascript version]().**
+**I included a [typescript version](https://github.com/ralexand56/sg-test/blob/master/sweet-green.ts) and a [javascript version](https://github.com/ralexand56/sg-test/blob/master/sweet-green.js).**
 
-**I setup [jest tests]() for the stated examples and some other cases.**
+**I setup [jest tests](https://github.com/ralexand56/sg-test/blob/master/sweet-green.test.js) for the stated examples and some other cases.**
 
-[Test Results]()
+## Test Results
+![Test Results](./testresults.jpg)

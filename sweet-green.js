@@ -1,12 +1,3 @@
-// interface Card {
-//   suit: Suit;
-//   rank: number;
-// }
-
-// type Suit = `hearts` | `diamonds` | `spades` | `clubs`;
-
-// type Hand = `flush` | `straight` | `twoPair` | `pair` | `none`;
-
 function calculateHand(cards) {
   if (findFlush(cards)) {
     return `flush`;
@@ -20,13 +11,13 @@ function calculateHand(cards) {
   return `none`;
 }
 
-const findFlush = (cards) => {
+const findFlush = cards => {
   const suits = cards.map(x => x.suit);
 
   return new Set(suits).size === 1;
 };
 
-const findStraight = (cards) => {
+const findStraight = cards => {
   const orderedCards = cards.sort((a, b) => a.rank - b.rank).map(x => x.rank);
 
   if (!isIntervalOfOneFunction(orderedCards)) {
@@ -36,7 +27,7 @@ const findStraight = (cards) => {
   return orderedCards[orderedCards.length - 1] - orderedCards[0] === 4;
 };
 
-const isIntervalOfOneFunction = (arr) => {
+const isIntervalOfOneFunction = arr => {
   for (let i = 0; i < arr.length; i++) {
     if (i !== 0) {
       if (arr[i] - arr[i - 1] !== 1) {
@@ -48,7 +39,7 @@ const isIntervalOfOneFunction = (arr) => {
   return true;
 };
 
-const findTwoPair = (cards) => {
+const findTwoPair = cards => {
   let hash = {};
   let pairCount = 0;
 
@@ -73,7 +64,7 @@ const findTwoPair = (cards) => {
   return pairCount === 2;
 };
 
-const findPair = (cards) => {
+const findPair = cards => {
   let hash = {};
 
   for (let item of cards) {
@@ -92,85 +83,5 @@ const findPair = (cards) => {
 
   return false;
 };
-
-// console.log(
-//   calculateHand([
-//     { suit: "clubs", rank: 1 },
-//     { suit: "clubs", rank: 3 },
-//     { suit: "spades", rank: 5 },
-//     { suit: "clubs", rank: 4 },
-//     { suit: "hearts", rank: 11 }
-//   ])
-// );
-
-// console.log(
-//   calculateHand([
-//     { suit: "clubs", rank: 3 },
-//     { suit: "clubs", rank: 3 },
-//     { suit: "spades", rank: 5 },
-//     { suit: "clubs", rank: 4 },
-//     { suit: "hearts", rank: 3 }
-//   ])
-// );
-
-// console.log(
-//   calculateHand([
-//     { suit: "clubs", rank: 3 },
-//     { suit: "clubs", rank: 3 },
-//     { suit: "spades", rank: 5 },
-//     { suit: "clubs", rank: 3},
-//     { suit: "hearts", rank: 3 }
-//   ])
-// );
-
-// console.log(
-//   calculateHand([
-//     { suit: "clubs", rank: 3 },
-//     { suit: "clubs", rank: 3 },
-//     { suit: "spades", rank: 5 },
-//     { suit: "clubs", rank: 5},
-//     { suit: "hearts", rank: 3 }
-//   ])
-// );
-
-// console.log(
-//   calculateHand([
-//     { suit: "clubs", rank: 1 },
-//     { suit: "clubs", rank: 2 },
-//     { suit: "spades", rank: 3 },
-//     { suit: "clubs", rank: 4 },
-//     { suit: "hearts", rank: 5 }
-//   ])
-// );
-
-// console.log(
-//   calculateHand([
-//     { suit: "clubs", rank: 1 },
-//     { suit: "clubs", rank: 2 },
-//     { suit: "spades", rank: 3 },
-//     { suit: "clubs", rank: 4 },
-//     { suit: "hearts", rank: 5 }
-//   ])
-// );
-
-// console.log(
-//   calculateHand([
-//     { suit: "clubs", rank: 4 },
-//     { suit: "clubs", rank: 2 },
-//     { suit: "spades", rank: 3 },
-//     { suit: "clubs", rank: 4 },
-//     { suit: "hearts", rank: 6 }
-//   ])
-// );
-
-// console.log(
-//   calculateHand([
-//     { suit: "clubs", rank: 2 },
-//     { suit: "clubs", rank: 3 },
-//     { suit: "spades", rank: 4 },
-//     { suit: "clubs", rank: 5 },
-//     { suit: "hearts", rank: 6 }
-//   ])
-// );
 
 module.exports = calculateHand;
